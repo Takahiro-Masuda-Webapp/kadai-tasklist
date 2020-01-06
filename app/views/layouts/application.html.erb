@@ -19,10 +19,11 @@
 
 
   <body>
-    <% flash.each do |task_type,task| %>
-      <div><%= task %></div>
-    <% end %>
+    <%= render 'layouts/navbar' %>
     
-    <%= yield %>
-  </body>
+    <div class="container">
+      <%= render 'layouts/flash_messages' %>
+
+      <%= yield %>
+    </div>
 </html>
