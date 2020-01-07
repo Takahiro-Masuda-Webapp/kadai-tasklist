@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   resources :users
   
-  resources :tasks
+  get 'delete', to: 'tasks#destroy'
+  resources :tasks 
 end

@@ -7,7 +7,7 @@
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item"><%= link_to 'Myprofile', user_path(current_user) %></li>
               <li class="dropdown-divider"></li>
-              <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete %></li>
+              <li class="dropdown-item"><%= link_to 'Logout', logout_path %></li>
             </ul>
           </li>
         <% else %>
