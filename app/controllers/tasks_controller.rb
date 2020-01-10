@@ -7,9 +7,10 @@ class TasksController < ApplicationController
   def index
     @tasks = current_user.tasks.order(id: :desc).page(params[:page]).per(20)
   end
+  
   def show
-    
   end
+  
   def new 
     @task = current_user.tasks.build
   end
@@ -23,9 +24,10 @@ class TasksController < ApplicationController
       render :new
     end
   end
+  
   def edit
-    
   end
+  
   def update
     if @task.update(task_params)
       flash[:success] = 'タスクは正常に更新されました'
@@ -35,6 +37,7 @@ class TasksController < ApplicationController
       render :edit
     end
   end
+  
   def destroy
     @task.destroy
     
