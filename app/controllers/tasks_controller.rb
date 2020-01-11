@@ -9,6 +9,7 @@ class TasksController < ApplicationController
   end
   
   def show
+    
   end
   
   def new 
@@ -48,7 +49,12 @@ class TasksController < ApplicationController
   private 
   
   def set_task
-    @task = current_user.tasks.find(params[:id])
+    @task = current_user.tasks.find_by(id: params[:id])
+    if @task
+      return @task
+    else
+      redirect_to root_url
+    end
   end
   
   def task_params
